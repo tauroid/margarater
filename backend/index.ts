@@ -1,5 +1,4 @@
 import express from 'express'
-import { MongoClient } from 'mongodb'
 
 import twoRandomToppings from './routes/twoRandomToppings'
 
