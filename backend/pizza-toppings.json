@@ -1,0 +1,129 @@
+{
+	"categories": [{
+			"id": 1,
+			"name": "Meat"
+		},
+		{
+			"id": 2,
+			"name": "Veg"
+		},
+		{
+			"id": 3,
+			"name": "Cheese"
+		}
+	],
+	"toppings": [{
+			"name": "Plain chicken",
+			"img": "images/plain-chicken.jpg",
+			"category": 1
+		},
+		{
+			"name": "Tandoori chicken",
+			"img": "images/tandoori-chicken.jpg",
+			"category": 1
+		}, {
+			"name": "Quorn chicken",
+			"img": "images/quorn-chicken.jpg",
+			"category": 1
+		}, {
+			"name": "Spicy beef",
+			"img": "images/spicy-beef.jpg",
+			"category": 1
+		},
+		{
+			"name": "Meatballs",
+			"img": "images/meatballs.jpg",
+			"category": 1
+		},
+		{
+			"name": "Prosciutto",
+			"img": "images/prosciutto.jpg",
+			"category": 1
+		},
+		{
+			"name": "Bacon",
+			"img": "images/bacon.jpg",
+			"category": 1
+		},
+		{
+			"name": "Chorizo",
+			"img": "images/chorizo.jpg",
+			"category": 1
+		},
+		{
+			"name": "Pulled pork",
+			"img": "images/pulled-pork.jpg",
+			"category": 1
+		},
+		{
+			"name": "Sweetcorn",
+			"img": "images/sweetcorn.jpg",
+			"category": 2
+		},
+		{
+			"name": "Peppers",
+			"img": "images/peppers.jpg",
+			"category": 2
+		},
+		{
+			"name": "Onion",
+			"img": "images/onions.jpg",
+			"category": 2
+		},
+		{
+			"name": "Mushrooms",
+			"img": "images/mushrooms.jpg",
+			"category": 2
+		},
+		{
+			"name": "Olives",
+			"img": "images/olives.jpg",
+			"category": 2
+		},
+		{
+			"name": "Rocket",
+			"img": "images/rocket.jpg",
+			"category": 2
+		},
+		{
+			"name": "Jalapeños",
+			"img": "images/jalapenos.jpg",
+			"category": 2
+		},
+		{
+			"name": "Tomatoes",
+			"img": "images/tomato.jpg",
+			"category": 2
+		},
+		{
+			"name": "Gherkins",
+			"img": "images/gherkins.jpg",
+			"category": 2
+		},
+		{
+			"name": "Courgettes",
+			"img": "images/courgettes.jpg",
+			"category": 2
+		},
+		{
+			"name": "Aubergine",
+			"img": "images/aubergine.jpg",
+			"category": 2
+		},
+		{
+			"name": "Mozarella",
+			"img": "images/mozeralla.jpg",
+			"category": 3
+		},
+		{
+			"name": "Parmesan",
+			"img": "images/parmesan.jpeg",
+			"category": 3
+		},
+		{
+			"name": "Blue cheese",
+			"img": "images/blue-cheese.jpg",
+			"category": 3
+		}
+	]
+}
