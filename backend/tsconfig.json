@@ -8,6 +8,7 @@
     "esModuleInterop": true,
     "strict": true,
     "module": "esnext",
-    "moduleResolution": "node"
+    "moduleResolution": "node",
+    "isolatedModules": true
   }
 }
