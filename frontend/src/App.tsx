@@ -1,11 +1,12 @@
 import './App.scss'
 // uncomment when we have RateToppingsPage
-//import {BrowserRouter, Route, Routes, Link} from 'react-router-dom'
+import {BrowserRouter, Route, Routes, Link} from 'react-router-dom'
 import NavbarDesktop from './Navbar/NavbarDesktop'
 import NavbarMobile from './Navbar/NavbarMobile'
 import './styles/_colors.scss'
 import WindowSizeContext from './WindowSizeContext'
 import {useEffect, useState} from 'react'
+import TopTenToppingsPage from './TopTenToppingsPage/TopTenToppingsPage'
 
 function App() {
   const [windowSize, setWindowSize] = useState({
@@ -24,17 +25,18 @@ function App() {
 
   return (
     <div className="App">
-
+      <BrowserRouter>
         <WindowSizeContext.Provider value={windowSize}>
-      {/* uncomment when we have rate toppings page */}
-      
-      {/* <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<RateToppingsPage/>}
-        </Routes>
-      </BrowserRouter> */}
-          {(windowSize.width < 850) ? <NavbarMobile /> : <NavbarDesktop />}
+          {(windowSize.width < 850)
+          ? <NavbarMobile />
+          : <NavbarDesktop />}
+
+          <Routes>
+            <Route path="/" element={<div>Rate toppings</div> /*<RateToppingsPage/>*/}/>
+            <Route path="/top10" element={<TopTenToppingsPage/>}/>
+          </Routes>
         </WindowSizeContext.Provider>
+      </BrowserRouter>
     </div>
   )
 }
