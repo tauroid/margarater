@@ -2,6 +2,7 @@ import { Topping } from "./RateToppingCard/RateToppingCard";
 import RateToppingCard from "./RateToppingCard/RateToppingCard";
 
 function App() {
+  // Everything in here is just for testing purposes
   const VegTopping: Topping = {
     _id: "1",
     name: 'Aubergine',
