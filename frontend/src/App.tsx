@@ -7,11 +7,11 @@ import WindowSizeContext from './WindowSizeContext';
 import {useEffect, useState} from 'react'
 
 function App() {
-  const [windowSizeWidth, setWindowSize] = useState(window.innerWidth)
+  const [windowSizeWidth, setWindowSizeWidth] = useState(window.innerWidth)
 
   useEffect(() => {
 		window.addEventListener('resize', (event) => {
-      setWindowSize(window.innerWidth)
+      setWindowSizeWidth(window.innerWidth)
     })
 	}, []) 
 
