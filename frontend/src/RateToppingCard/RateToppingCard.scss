@@ -1,5 +1,5 @@
 @import '../styles/colors';
-
+@import '../styles/_fonts';
 
 .RateToppingCard {
     box-sizing: border-box;
@@ -23,9 +23,23 @@
 }
 
 button {
+    position: relative;
     background-color: $buttons-color;
-    color: $h1-and-buttons-text; 
+    color: $h1-and-buttons-text;
+    width: 150px; 
+    height: 50px;
     border-radius: 5px;
+    box-shadow: 5px 5px;
+    font-family: $paragraph-font;
+    font-size: 18px;
+    font-weight: bold ;
+    border: none;
+}
+
+button:active {
+    top: 5px;
+    left: 5px;
+    box-shadow: none;
 }
 
 .Veg {
