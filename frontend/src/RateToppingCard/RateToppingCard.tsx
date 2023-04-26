@@ -1,23 +1,26 @@
-interface Topping  {
-    id: number
+import './RateToppingCard.scss'
+
+export interface Topping  {
+    _id: string
     name: string
     category: string 
     img: string 
 }
 
 
-
-interface ToppingsProps {
+export interface ToppingsProps {
     cardTopping: Topping
-    get2randomToppings: Function
-    rateToppings: Function
+    get2randomToppings: (exclude?: boolean) => void
+    rateToppings: (winner: Topping) => void
 }
 
 const RateToppingCard = (props: ToppingsProps) : JSX.Element => {
     return (
-        <div className=`"RateToppingCard" {props.cardTopping.category}`>
+        <div className={`RateToppingCard ${props.cardTopping.category}`}>
             <img src={props.cardTopping.img}/>
             <button>{props.cardTopping.name}</button>
         </div>
     )
 }
+
+export default RateToppingCard

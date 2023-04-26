@@ -1,25 +1,19 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import {Topping} from "./RateToppingCard/RateToppingCard";
+import RateToppingCard from "./RateToppingCard/RateToppingCard";
+
 
 function App() {
+  const VegTopping: Topping = {
+      _id: "1",
+      name: 'Aubergine',
+      category: 'Veg',
+      img: 'images/aubergine.jpg' 
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+   <>
+    <RateToppingCard cardTopping={VegTopping} get2randomToppings={()=>{}} rateToppings={()=>{}}/>  
+  </>
   );
 }
 
