@@ -1,0 +1,38 @@
+@import '../styles/colors';
+@import '../styles/_fonts';
+
+.page {
+    background-color: #F1DDB8;
+}
+
+h2 {
+    display: flex;
+    justify-content: center;
+    // align-content: center;
+    // flex-wrap: nowrap;
+    padding: 40px;
+    font-family: $paragraph-font;
+    font-size: 30px;
+}
+
+span {
+    font-family: $heading-font;
+    // color: $h1-and-buttons-text;
+    font-size: 80px;
+    font-weight: 900;
+}
+
+.cardsDisplay {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+@media screen and (max-width: 900px) {
+    span {
+        font-size: 40px;
+        font-weight: 600;
+    }
+
+
+}
