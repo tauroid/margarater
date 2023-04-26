@@ -2,11 +2,20 @@
 import { useState, useEffect, ReactElement } from "react";
 import { JsxElement } from "typescript";
 
+import RateToppingCard from "../RateToppingCard/RateToppingCard";
+import { Topping } from "../RateToppingCard/RateToppingCard"
 
 const RateToppingsPage = (): JSX.Element => {
-
-    const [topping1, setTopping1] = useState('')
-    const [topping2, setTopping2] = useState('')
+    
+    const dummyTopping: Topping  = {
+        _id: '',
+        name: '',
+        category: '', 
+        img: '', 
+    }
+    
+    const [topping1, setTopping1] = useState<Topping>(dummyTopping)
+    const [topping2, setTopping2] = useState<Topping>(dummyTopping)
 
     function get2RandomToppings() {
 
@@ -29,9 +38,9 @@ const RateToppingsPage = (): JSX.Element => {
         <>
             <h2>Tell us your tastiest topping out of these two!</h2>
 
-            {/* <RateToppingCard topping1={topping1} />
+            <RateToppingCard cardTopping={topping1} get2RandomToppings={get2RandomToppings} />
 
-            <RateToppingCard topping2={topping2} /> */}
+            <RateToppingCard cardTopping={topping2} get2RandomToppings={get2RandomToppings}/>
         </>
 
 
@@ -39,6 +48,5 @@ const RateToppingsPage = (): JSX.Element => {
 
 }
 
-//exports
 
 export default RateToppingsPage

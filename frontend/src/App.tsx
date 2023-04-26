@@ -10,7 +10,8 @@ function App(): JSX.Element {
       <RateToppingsPage />
 
     </div>
+
   );
 }
 
-export default App;
+export default App
