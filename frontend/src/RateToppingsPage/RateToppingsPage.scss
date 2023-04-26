@@ -6,10 +6,7 @@
 }
 
 h2 {
-    display: flex;
-    justify-content: center;
-    // align-content: center;
-    // flex-wrap: nowrap;
+    text-align: center;
     padding: 40px;
     font-family: $paragraph-font;
     font-size: 30px;
@@ -17,7 +14,6 @@ h2 {
 
 span {
     font-family: $heading-font;
-    // color: $h1-and-buttons-text;
     font-size: 80px;
     font-weight: 900;
 }
@@ -32,6 +28,14 @@ span {
     span {
         font-size: 40px;
         font-weight: 600;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    
+    span {
+        font-size: 20px;
+        font-weight: 300;
     }
 
 

@@ -12,13 +12,12 @@
     padding: 20px;
 
 
-    img{
+    img {
         height: 300px ;
         width: 300px ;
         object-fit: cover;
         border-radius: 5px;
         margin: 20px
-        
     }
 }
 
@@ -52,4 +51,39 @@ button:active {
 
 .Cheese {
     background-color: $cheese-color;
+}
+
+
+@media screen and (max-width: 900px) {
+    
+    .RateToppingCard {
+        
+        padding: 5px;
+        padding-bottom: 15px;
+        
+        img {
+        height: 200px ;
+        width: 200px ;
+        object-fit: cover;
+        border-radius: 5px;
+        margin: 20px
+    }
+}
+}
+
+
+@media screen and (max-width: 700px) {
+    
+    .RateToppingCard img {
+        height: 100px ;
+        width: 100px ;
+        object-fit: cover;
+        border-radius: 5px;
+        margin: 20px
+    }
+    
+    button {
+        width: 100px;
+    }
+
 }
