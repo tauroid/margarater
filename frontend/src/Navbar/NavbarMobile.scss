@@ -2,9 +2,12 @@
 @import '../styles/_fonts';
 
 .navbarMobile {
+    position: relative;
+    overflow: clip;
     background-color: $cheese-color;
-    
+
     h1 {
+        position: relative;
         font-family: $heading-font;
         font-weight: 900;
         font-style: normal;
@@ -13,6 +16,7 @@
         margin: 0 auto;
         text-align: center;
         color: $h1-and-buttons-text;
+        z-index: 10;
     }
     
     .links {
@@ -35,18 +39,29 @@
     .circle1 {
         position: absolute;
         top: -50px;
-        left: 50px;
+        left: 10%;
     }
     
     .circle2 {
         position: absolute;
-        left: 320px;
-        top: 50px;
+        left: 35%;
+        top: calc(50px + (850px - 100vw) * 0.1);
     }
     
     .circle3 {
         position: absolute;
-        right: 420px;
-        top: 5px;
+        right: 20%;
+        top: -15px;
+    }
+
+    @media screen and (max-width: 361px) {
+        .circle2 {
+            top: auto;
+            bottom: -70px;
+        }
+
+        .circle3 {
+            top: 40px;
+        }
     }
 }
