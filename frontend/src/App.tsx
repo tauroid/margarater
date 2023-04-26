@@ -1,37 +1,42 @@
-import { Topping } from "./RateToppingCard/RateToppingCard";
-import RateToppingCard from "./RateToppingCard/RateToppingCard";
+import './App.scss'
+// uncomment when we have RateToppingsPage
+//import {BrowserRouter, Route, Routes, Link} from 'react-router-dom'
+import NavbarDesktop from './Navbar/NavbarDesktop'
+import NavbarMobile from './Navbar/NavbarMobile'
+import './styles/_colors.scss'
+import WindowSizeContext from './WindowSizeContext'
+import {useEffect, useState} from 'react'
 
 function App() {
-  // Everything in here is just for testing purposes
-  const VegTopping: Topping = {
-    _id: "1",
-    name: 'Aubergine',
-    category: 'Veg',
-    img: 'images/aubergine.jpg'
-  }
+  const [windowSize, setWindowSize] = useState({
+    width: window.innerWidth,
+    height: window.innerHeight
+  })
 
-  const MeatTopping: Topping = {
-    _id: "2",
-    name: 'Tandoori Chicken',
-    category: 'Meat',
-    img: 'images/tandoori-chicken.jpg'
-  }
-
-  const CheeseTopping: Topping = {
-    _id: "2",
-    name: 'Mozzarella',
-    category: 'Cheese',
-    img: 'images/mozeralla.jpg'
-  }
+  useEffect(() => {
+    window.addEventListener('resize', () => {
+      setWindowSize({
+        width: window.innerWidth,
+        height: window.innerHeight
+      })
+    })
+  }, [])
 
   return (
-    <>
-      <RateToppingCard cardTopping={VegTopping} get2randomToppings={() => { }} rateToppings={() => { }} />
-      <RateToppingCard cardTopping={MeatTopping} get2randomToppings={() => { }} rateToppings={() => { }} />
-      <RateToppingCard cardTopping={CheeseTopping} get2randomToppings={() => { }} rateToppings={() => { }} />
-    
-    </>
-  );
+    <div className="App">
+
+        <WindowSizeContext.Provider value={windowSize}>
+      {/* uncomment when we have rate toppings page */}
+      
+      {/* <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<RateToppingsPage/>}
+        </Routes>
+      </BrowserRouter> */}
+          {(windowSize.width < 850) ? <NavbarMobile /> : <NavbarDesktop />}
+        </WindowSizeContext.Provider>
+    </div>
+  )
 }
 
 export default App;
