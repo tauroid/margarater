@@ -1,10 +1,10 @@
-import './App.scss';
+import './App.scss'
 // uncomment when we have RateToppingsPage
 //import {BrowserRouter, Route, Routes, Link} from 'react-router-dom'
-import NavbarDesktop from './Navbar/NavbarDesktop';
-import NavbarMobile from './Navbar/NavbarMobile';
+import NavbarDesktop from './Navbar/NavbarDesktop'
+import NavbarMobile from './Navbar/NavbarMobile'
 import './styles/_colors.scss'
-import WindowSizeContext from './WindowSizeContext';
+import WindowSizeContext from './WindowSizeContext'
 import {useEffect, useState} from 'react'
 
 function App() {
@@ -14,7 +14,7 @@ function App() {
   })
 
   useEffect(() => {
-    window.addEventListener('resize', (event) => {
+    window.addEventListener('resize', () => {
       setWindowSize({
         width: window.innerWidth,
         height: window.innerHeight
