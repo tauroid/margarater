@@ -3,6 +3,7 @@ export interface Topping  {
     name: string
     category: string
     img: string
+    winRatio?: number
 }
 
 export interface ToppingsProps {
