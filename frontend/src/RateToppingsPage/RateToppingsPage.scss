@@ -1,0 +1,46 @@
+@import '../styles/colors';
+@import '../styles/_fonts';
+
+.page {
+    background-color: #F1DDB8;
+}
+
+h2 {
+    text-align: center;
+    padding: 40px;
+    font-family: $paragraph-font;
+    font-size: 30px;
+}
+
+span {
+    font-family: $heading-font;
+    font-size: 80px;
+    font-weight: 900;
+}
+
+.cardsDisplay {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+@media screen and (max-width: 900px) {
+    span {
+        font-size: 40px;
+        font-weight: 600;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    
+    h2 {
+        padding: 30px;
+        font-size: 25px;
+    }
+
+    span {
+        font-size: 20px;
+        font-weight: 300;
+    }
+
+}
