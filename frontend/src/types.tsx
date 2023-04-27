@@ -8,6 +8,6 @@ export interface Topping  {
 
 export interface ToppingsProps {
     cardTopping: Topping
-    get2randomToppings: (exclude?: boolean) => void
+    get2RandomToppings: (exclude?: boolean) => void
     rateToppings: (winner: Topping) => void
 }
