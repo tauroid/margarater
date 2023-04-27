@@ -1,5 +1,5 @@
 import { Request, Response } from 'express'
-import expandToppingsCategories from '../expandToppingsCategories'
+import replaceToppingCategoryIdsWithNames from '../replaceToppingCategoryIdsWithNames'
 import { getToppingsCollection } from '../db'
 import { SuccessResponse } from '../response'
 import { Topping, ToppingWithCategoryId } from '../topping'
@@ -28,6 +28,6 @@ export default async function twoRandomToppings(
   }
 
   response.json({message: "Successfully retrieved toppings",
-                 data: (await expandToppingsCategories(toppings)
+                 data: (await replaceToppingCategoryIdsWithNames(toppings)
                        ) as [Topping, Topping]})
 }
