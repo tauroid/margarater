@@ -37,9 +37,9 @@ const rateToppings = async (request: Request, response: Response) => {
         await toppingsCollection.updateOne({ _id: winningToppingId }, { $set: updateWinRatio(winningTopping) })
         await toppingsCollection.updateOne({ _id: losingToppingId }, { $set: updateWinRatio(losingTopping) })
 
-        response.json({ "message": "Successfully updated the database", "data": [] }).status(200)
+        response.status(200).json({ "message": "Successfully updated the database", "data": [] })
     } catch (Exception) {
-        response.json({ "message": "Couldn't update the database", "data": [] }).status(500)
+        response.status(500).json({ "message": "Couldn't update the database", "data": [] })
     }
     // send confirmation message 
 }
