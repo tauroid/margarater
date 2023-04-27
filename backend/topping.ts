@@ -7,7 +7,7 @@ export type Topping = {
   img: string
   numberOfMatches?: number
   numberOfWins?: number
-  winRation?: number
+  winRatio?: number
 }
 
 export type ToppingWithCategoryId = Omit<Topping,'category'> & {

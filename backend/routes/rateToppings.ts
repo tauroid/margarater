@@ -1,22 +1,23 @@
 import { Request, Response } from 'express'
-import { Collection, ObjectId } from 'mongodb'
+import { ObjectId } from 'mongodb'
 import { getToppingsCollection } from '../db'
-import { Topping, ToppingWithCategoryId } from '../topping'
+import { ToppingWithCategoryId } from '../topping'
 
 const updateNumberOfMatches = (topping: ToppingWithCategoryId): number => {
-    return topping.numberOfMatches ? topping.numberOfMatches + 1 : 1
+    return topping.numberOfMatches !== undefined ? topping.numberOfMatches + 1 : 1
 }
 
 const updateNumberOfWins = (topping: ToppingWithCategoryId): number => {
-    return topping.numberOfWins ? topping.numberOfWins + 1 : 1
+    return topping.numberOfWins !== undefined ? topping.numberOfWins + 1 : 1
 }
 
 const updateWinRatio = (topping: ToppingWithCategoryId): number => {
-    let winRatio = 0
-    if (topping.numberOfWins && topping.numberOfMatches) {
-        winRatio = topping.numberOfWins / topping.numberOfMatches
-    }
-    return winRatio
+     if (topping.numberOfWins !== undefined && topping.numberOfMatches !== undefined) {
+         const winRatio = topping.numberOfWins / topping.numberOfMatches
+         return winRatio
+     } else {
+         throw new Error ("Couldn't calculate the winRatio ; numberOfMatches and/or number ofWins might be undefined")
+     }
 }
 
 
@@ -29,19 +30,36 @@ const rateToppings = async (request: Request, response: Response) => {
         const winningTopping = await toppingsCollection.findOne({ _id: winningToppingId }) as ToppingWithCategoryId
         const losingTopping = await toppingsCollection.findOne({ _id: losingToppingId }) as ToppingWithCategoryId
 
-        await toppingsCollection.updateOne({ _id: winningToppingId }, { $set: updateNumberOfMatches(winningTopping) })
-        await toppingsCollection.updateOne({ _id: losingToppingId }, { $set: updateNumberOfMatches(losingTopping) })
+        winningTopping.numberOfMatches = updateNumberOfMatches(winningTopping)      
+        losingTopping.numberOfMatches = updateNumberOfMatches(losingTopping)
+        
+        winningTopping.numberOfWins = updateNumberOfWins(winningTopping)
+       
+        if(losingTopping.numberOfWins === undefined) {
+            losingTopping.numberOfWins = 0
+        }
 
-        await toppingsCollection.updateOne({ _id: winningToppingId }, { $set: updateNumberOfWins(winningTopping) })
+        winningTopping.winRatio = updateWinRatio(winningTopping)
+        losingTopping.winRatio = updateWinRatio(losingTopping)     
 
-        await toppingsCollection.updateOne({ _id: winningToppingId }, { $set: updateWinRatio(winningTopping) })
-        await toppingsCollection.updateOne({ _id: losingToppingId }, { $set: updateWinRatio(losingTopping) })
+        await toppingsCollection.updateOne({ _id: winningToppingId }, { $set:
+             { "numberOfMatches":  winningTopping.numberOfMatches, 
+               "numberOfWins": winningTopping.numberOfWins,
+                "winRatio": winningTopping.winRatio 
+            } 
+        })
+
+        await toppingsCollection.updateOne({ _id: losingToppingId }, { $set:
+            { "numberOfMatches":  losingTopping.numberOfMatches, 
+              "numberOfWins": losingTopping.numberOfWins,
+               "winRatio": losingTopping.winRatio 
+           } 
+       })
 
         response.status(200).json({ "message": "Successfully updated the database", "data": [] })
     } catch (Exception) {
         response.status(500).json({ "message": "Couldn't update the database", "data": [] })
     }
-    // send confirmation message 
 }
 
 export default rateToppings
