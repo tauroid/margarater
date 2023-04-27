@@ -1,5 +1,5 @@
 // imports
-import { useState, useEffect, ReactElement } from "react";
+import { useState, useEffect } from "react";
 import { JsxElement } from "typescript";
 import './RateToppingsPage.scss'
 import RateToppingCard from "../RateToppingCard/RateToppingCard";
@@ -7,15 +7,15 @@ import { Topping } from "../RateToppingCard/RateToppingCard"
 
 const RateToppingsPage = (): JSX.Element => {
 
-    const dummyTopping: Topping = {
+    const initialEmptyTopping: Topping = {
         _id: '',
         name: '',
         category: '',
         img: '',
     }
 
-    const [topping1, setTopping1] = useState<Topping>(dummyTopping)
-    const [topping2, setTopping2] = useState<Topping>(dummyTopping)
+    const [topping1, setTopping1] = useState<Topping>(initialEmptyTopping)
+    const [topping2, setTopping2] = useState<Topping>(initialEmptyTopping)
 
     function get2RandomToppings() {
 

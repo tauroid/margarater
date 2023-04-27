@@ -1,11 +1,10 @@
 import './RateToppingCard.scss'
 
-
-export interface Topping  {
+export interface Topping {
     _id: string
     name: string
-    category: string 
-    img: string 
+    category: string
+    img: string
 }
 
 
@@ -16,19 +15,27 @@ export interface ToppingsProps {
 }
 
 
-const RateToppingCard = (props: ToppingsProps) : JSX.Element => {
-    
+const RateToppingCard = (props: ToppingsProps): JSX.Element => {
+
     const handleVote = () => {
         props.rateToppings(props.cardTopping)
         props.get2RandomToppings()
     }
 
     return (
+
         <div className={`RateToppingCard ${props.cardTopping.category}`}>
-            <img src={props.cardTopping.img} alt={props.cardTopping.name}/>
-            <button onClick={handleVote}>{props.cardTopping.name}</button>
+            {props.cardTopping.img ?
+                <>
+                    <img src={props.cardTopping.img} alt={props.cardTopping.name} />
+                    <button onClick={handleVote}>{props.cardTopping.name}</button>
+                </> :
+                <p>Prepping ingredients...</p>
+            }
         </div>
+
     )
 }
+
 
 export default RateToppingCard

@@ -2,7 +2,7 @@
 @import '../styles/_fonts';
 
 .page {
-    background-color: #F1DDB8;
+    background-color: $background-color;
 }
 
 h2 {
@@ -10,12 +10,14 @@ h2 {
     padding: 40px;
     font-family: $paragraph-font;
     font-size: 30px;
+    color: $h1-and-buttons-text
 }
 
 span {
     font-family: $heading-font;
     font-size: 80px;
     font-weight: 900;
+    color: $h1-and-buttons-text
 }
 
 .cardsDisplay {
@@ -39,7 +41,7 @@ span {
     }
 
     span {
-        font-size: 20px;
+        font-size: 40px;
         font-weight: 300;
     }
 
