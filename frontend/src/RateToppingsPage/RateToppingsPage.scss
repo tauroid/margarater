@@ -7,6 +7,8 @@
     flex-direction: column;
     justify-content: center;
     flex-grow: 1;
+    position: relative;
+    overflow: clip;
 }
 
 h2 {
@@ -15,6 +17,7 @@ h2 {
     font-size: 30px;
     color: $h1-and-buttons-text;
     margin: 20px 0;
+    z-index: 1;
 }
 
 span {
@@ -31,6 +34,12 @@ span {
     justify-content: center;
     align-items: center;
     margin-bottom: 20px;
+    z-index: 1;
+}
+
+.surprisePizza {
+    position: absolute;
+    width: 100%;
 }
 
 @media screen and (max-width: 900px) {

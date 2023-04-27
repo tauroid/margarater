@@ -34,6 +34,8 @@ const RateToppingsPage = (): JSX.Element => {
         get2RandomToppings()
     }, [])
 
+    const [counter, setCounter] = useState(-30)
+
     function rateToppings(cardTopping: Topping) {
 
         let winningToppingId: string = ''
@@ -62,6 +64,7 @@ const RateToppingsPage = (): JSX.Element => {
             }
         })
 
+        setCounter(Math.min(counter+1,85))
     }
 
     const windowSize = useContext(WindowSizeContext)
@@ -85,6 +88,10 @@ const RateToppingsPage = (): JSX.Element => {
             </div>
 
             {windowSize.width <= 423 && <span>VS</span>}
+
+            <img className="surprisePizza" alt="pizza" src="images/pizza.png"
+                 style={{bottom: 'calc(-100% + '+(counter)+'%)'}}
+            />
         </div>
 
 
