@@ -1,0 +1,104 @@
+@import '../styles/colors';
+@import '../styles/_fonts';
+
+.RateToppingCard {
+    box-sizing: border-box;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 400px;
+    margin: 10px auto;
+    padding: 20px;
+    
+    img {
+        height: 300px;
+        width: 300px;
+        object-fit: cover;
+        border-radius: 5px;
+        margin: 20px
+    }
+    
+    p {
+        color: $h1-and-buttons-text;
+        font-size: 30px;
+        font-family: $h1-and-buttons-text;
+        font-weight: 600;
+        max-width: 120px;
+    }
+}
+
+button {
+    position: relative;
+    background-color: $buttons-color;
+    color: $h1-and-buttons-text;
+    width: 150px;
+    height: 50px;
+    border-radius: 5px;
+    box-shadow: 5px 5px;
+    font-family: $paragraph-font;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+}
+
+button:active {
+    top: 5px;
+    left: 5px;
+    box-shadow: none;
+}
+
+.Veg {
+    background-color: $veg-color;
+}
+
+.Meat {
+    background-color: $meat-color;
+}
+
+.Cheese {
+    background-color: $cheese-color;
+}
+
+
+@media screen and (max-width: 900px) {
+
+    .RateToppingCard {
+
+        padding: 5px;
+        padding-bottom: 15px;
+
+        img {
+            height: 200px;
+            width: 200px;
+            object-fit: cover;
+            border-radius: 5px;
+            margin: 20px
+        }
+    }
+}
+
+
+@media screen and (max-width: 700px) {
+
+    .RateToppingCard {
+
+        img {
+            height: 130px;
+            width: 130px;
+            object-fit: cover;
+            border-radius: 5px;
+            margin: 10px
+        }
+
+        p {
+            font-size: 20px;
+        }
+    }
+
+    button {
+        width: 110px;
+        font-size: 16px;
+    }
+
+}
