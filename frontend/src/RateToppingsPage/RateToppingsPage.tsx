@@ -85,12 +85,14 @@ const RateToppingsPage = (): JSX.Element => {
             </div>
 
             {windowSize.width <= 423 && <span>VS</span>}
-        </div>
-
-
+            <div className="pizza_link_container">
+                <a href="https://www.google.com/maps/search/?api=1&query=pizzeria" target="_blank">
+                    I'm getting hungry...
+                </a>    
+            </div>
+                   </div>
     )
 
 }
-
 
 export default RateToppingsPage
