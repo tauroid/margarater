@@ -1,4 +1,4 @@
 {
   "ext": "ts,json",
-  "exec": "npx ts-node-esm index.ts"
+  "exec": "npx ts-node-esm --experimental-specifier-resolution=node index.ts"
 }
