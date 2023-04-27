@@ -1,13 +1,16 @@
-import './App.scss'
-// uncomment when we have RateToppingsPage
-//import {BrowserRouter, Route, Routes, Link} from 'react-router-dom'
+import React from 'react';
+import { useEffect, useState } from 'react'
+import { BrowserRouter, Route, Routes, Link } from 'react-router-dom'
+import RateToppingsPage from './RateToppingsPage/RateToppingsPage'
 import NavbarDesktop from './Navbar/NavbarDesktop'
 import NavbarMobile from './Navbar/NavbarMobile'
-import './styles/_colors.scss'
 import WindowSizeContext from './WindowSizeContext'
-import {useEffect, useState} from 'react'
+import './App.scss'
+import './styles/_colors.scss'
 
-function App() {
+
+function App(): JSX.Element {
+
   const [windowSize, setWindowSize] = useState({
     width: window.innerWidth,
     height: window.innerHeight
@@ -23,20 +26,16 @@ function App() {
   }, [])
 
   return (
-    <div className="App">
-
-        <WindowSizeContext.Provider value={windowSize}>
-      {/* uncomment when we have rate toppings page */}
-      
-      {/* <BrowserRouter>
+    <WindowSizeContext.Provider value={windowSize}>
+      {(windowSize.width < 850) ? <NavbarMobile /> : <NavbarDesktop />}
+      <BrowserRouter>
         <Routes>
-          <Route path="/" element={<RateToppingsPage/>}
+          <Route path="/" element={<RateToppingsPage />} />
         </Routes>
-      </BrowserRouter> */}
-          {(windowSize.width < 850) ? <NavbarMobile /> : <NavbarDesktop />}
-        </WindowSizeContext.Provider>
-    </div>
-  )
+      </BrowserRouter>
+    </WindowSizeContext.Provider>
+  );
+
 }
 
-export default App;
+export default App
