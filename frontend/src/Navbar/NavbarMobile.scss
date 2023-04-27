@@ -1,0 +1,67 @@
+@import '../styles/_colors';
+@import '../styles/_fonts';
+
+.navbarMobile {
+    position: relative;
+    overflow: clip;
+    background-color: $cheese-color;
+
+    h1 {
+        position: relative;
+        font-family: $heading-font;
+        font-weight: 900;
+        font-style: normal;
+        font-size: 45px;
+        padding: 0;
+        margin: 0 auto;
+        text-align: center;
+        color: $h1-and-buttons-text;
+        z-index: 10;
+    }
+    
+    .links {
+        text-decoration: none;
+        color: $meat-color;
+        font-family: $paragraph-font;
+        font-weight: 700;
+        font-style: normal;
+        font-size: 20px;
+        padding: 15px 0;
+    }
+    
+    .links-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+    }
+    
+    .circle1 {
+        position: absolute;
+        top: -50px;
+        left: 10%;
+    }
+    
+    .circle2 {
+        position: absolute;
+        left: 35%;
+        top: calc(50px + (850px - 100vw) * 0.1);
+    }
+    
+    .circle3 {
+        position: absolute;
+        right: 20%;
+        top: -15px;
+    }
+
+    @media screen and (max-width: 361px) {
+        .circle2 {
+            top: auto;
+            bottom: -75px;
+        }
+
+        .circle3 {
+            top: 40px;
+        }
+    }
+}

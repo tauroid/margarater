@@ -1,0 +1,87 @@
+@import '../styles/_colors';
+@import '../styles/_fonts';
+
+.navbarDesktop {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $cheese-color;
+    height: 108px;
+    position: relative;
+    overflow: clip;
+
+    h1 {
+        position: relative;
+        font-family: $heading-font;
+        font-weight: 900;
+        font-style: normal;
+        font-size: 80px;
+        margin: 0;
+        color: $h1-and-buttons-text;
+        z-index: 10;
+    }
+
+    .links {
+        text-decoration: none;
+        color: $meat-color;
+        font-family: $paragraph-font;
+        font-weight: 700;
+        font-style: normal;
+        font-size: 26px;
+        padding: 0 20px;
+    }
+
+    .circle1 {
+        position: absolute;
+        top: -50px;
+        left: 50px;
+    }
+    
+    .circle2 {
+        position: absolute;
+        left: 320px;
+        top: 25px;
+    }
+    
+    .circle3 {
+        position: absolute;
+        right: 420px;
+        top: 5px;
+    }
+    
+    @media screen and (max-width: 1800px) {
+    
+        .circle3 {
+            right: 320px;
+        }
+    }
+    
+    @media screen and (max-width: 1650px) { 
+    
+        .circle2 {
+            left: 210px;
+        }
+    
+        .circle3 {
+            right: 290px;
+        }
+    }
+    
+    @media screen and (max-width: 1550px) { 
+    
+        .circle2 {
+            left: 220px;
+        }
+    
+        .circle3 {
+            right: 250px;
+            top: -30px;
+        }
+    }
+
+    @media screen and (max-width: 1130px) {
+        h1 {
+            font-size: calc((100vw - 470px) * 0.122);
+        }
+    }
+}

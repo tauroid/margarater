@@ -1,0 +1,11 @@
+body {
+    height: 100vh;
+    position: relative;
+}
+
+#root, .App {
+    height: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
