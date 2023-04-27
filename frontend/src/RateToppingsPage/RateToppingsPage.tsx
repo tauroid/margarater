@@ -1,9 +1,9 @@
 // imports
-import { useState, useEffect } from "react";
-import { JsxElement } from "typescript";
+import { useState, useEffect, useContext } from "react";
 import './RateToppingsPage.scss'
 import RateToppingCard from "../RateToppingCard/RateToppingCard";
 import { Topping } from "../types"
+import WindowSizeContext from "../WindowSizeContext";
 
 const RateToppingsPage = (): JSX.Element => {
 
@@ -64,24 +64,27 @@ const RateToppingsPage = (): JSX.Element => {
 
     }
 
+    const windowSize = useContext(WindowSizeContext)
+
     return (
 
         <div className="page">
 
-            <h2>Tell us your tastiest topping out of these two!</h2>
+            <h2>What's the tastiest topping out of these two?</h2>
 
             <div className="cardsDisplay">
                 <RateToppingCard
                     cardTopping={topping1}
                     get2RandomToppings={get2RandomToppings}
                     rateToppings={rateToppings} />
-                <span>VS</span>
+                {windowSize.width > 423 && <span>VS</span>}
                 <RateToppingCard
                     cardTopping={topping2}
                     get2RandomToppings={get2RandomToppings}
                     rateToppings={rateToppings} />
             </div>
 
+            {windowSize.width <= 423 && <span>VS</span>}
         </div>
 
 
