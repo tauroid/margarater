@@ -39,12 +39,14 @@ span {
     align-items: center;
     a {
         text-decoration: none;
-        color: $meat-color;
+        color: $h1-and-buttons-text;
+        background-color: $cheese-color;
+        border-radius: 5px;
         font-family: $paragraph-font;
         font-weight: 700;
         font-style: normal;
         font-size: 26px;
-        padding: 0 20px;
+        padding: 10px 20px ;
         margin: 0 auto;
 }
 }
