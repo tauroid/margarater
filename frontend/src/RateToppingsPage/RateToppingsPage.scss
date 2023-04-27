@@ -7,6 +7,8 @@
     flex-direction: column;
     justify-content: center;
     flex-grow: 1;
+    position: relative;
+    overflow: clip;
 }
 
 h2 {
@@ -15,6 +17,7 @@ h2 {
     font-size: 30px;
     color: $h1-and-buttons-text;
     margin: 20px 0;
+    z-index: 1;
 }
 
 span {
@@ -31,6 +34,31 @@ span {
     justify-content: center;
     align-items: center;
     margin-bottom: 20px;
+    z-index: 1;
+}
+
+.surprisePizza {
+    position: absolute;
+    width: 100%;
+}
+
+.pizza_link_container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    z-index: 1;
+    a {
+        text-decoration: none;
+        color: $h1-and-buttons-text;
+        background-color: $cheese-color;
+        border-radius: 5px;
+        font-family: $paragraph-font;
+        font-weight: 700;
+        font-style: normal;
+        font-size: 26px;
+        padding: 10px 20px ;
+        margin: 0 auto;
+}
 }
 
 @media screen and (max-width: 900px) {

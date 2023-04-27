@@ -34,16 +34,16 @@ export default function TopTenToppingsPage() {
             <tbody>
               {topTen?.map(({name, category, winRatio}, index) => (
                 <>
-                <tr className={category+"-row entry"}>
-                  <td>{index+1}</td>
-                  <td>{name}</td>
-                  <td>{
-                    winRatio === undefined
-                     ? "No ratings"
-                     : (winRatio*100).toFixed(0)+'%'
-                  }</td>
-                </tr>
-                <tr><td></td></tr>
+                  <tr key={index} className={category+"-row entry"}>
+                    <td>{index+1}</td>
+                    <td>{name}</td>
+                    <td>{
+                      winRatio === undefined
+                      ? "No ratings"
+                      : (winRatio*100).toFixed(0)+'%'
+                    }</td>
+                  </tr>
+                  <tr><td></td></tr>
                 </>
               ))}
             </tbody>
