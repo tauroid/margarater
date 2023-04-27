@@ -17,6 +17,8 @@
         text-align: center;
         color: $h1-and-buttons-text;
         z-index: 10;
+        -webkit-text-stroke-width: 3px;
+        -webkit-text-stroke-color: $background-color;
     }
     
     .links {
@@ -37,22 +39,61 @@
     }
     
     .circle1 {
-        position: absolute;
-        top: -50px;
-        left: 10%;
-    }
+            position: absolute;
+            top: -50px;
+            left: 10%;
+            animation-name: circle1SpinMobile;
+            animation-duration: 2s; 
+            animation-iteration-count: infinite;
+            animation-direction: alternate; 
+            animation-timing-function: linear; 
+        }
+        
+        .circle2 {
+            position: absolute;
+            left: 35%;
+            top: calc(50px + (850px - 100vw) * 0.1);
+            animation-name: circle2SpinMobile;
+            animation-duration: 2s; 
+            animation-iteration-count: infinite;
+            animation-direction: alternate; 
+            animation-timing-function: linear; 
+        }
+        
+        .circle3 {
+            position: absolute;
+            right: 20%;
+            top: -15px;
+            animation-name: circle3SpinMobile;
+            animation-duration: 2s; 
+            animation-iteration-count: infinite;
+            animation-direction: alternate; 
+            animation-timing-function: linear; 
+        }
     
-    .circle2 {
-        position: absolute;
-        left: 35%;
-        top: calc(50px + (850px - 100vw) * 0.1);
-    }
+        @keyframes circle1SpinMobile {
+            from {
+                top: -10px;
+            } to {
+                bottom: 300px;
+            }
+        }
     
-    .circle3 {
-        position: absolute;
-        right: 20%;
-        top: -15px;
-    }
+        @keyframes circle2SpinMobile {
+            from {
+                left: -50px;
+            } to {
+                right: 0px;
+            }
+        }
+    
+        @keyframes circle3SpinMobile {
+            from {
+                right: -50px;
+            } to {
+                right: 100px;
+            } 
+        }
 
     @media screen and (max-width: 361px) {
         .circle2 {
