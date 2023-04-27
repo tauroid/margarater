@@ -16,7 +16,7 @@ const updateWinRatio = (topping: ToppingWithCategoryId): number => {
          const winRatio: number = topping.numberOfWins / topping.numberOfMatches
          return winRatio
      } else {
-         throw new Error ("Couldn't calculate the winRatio ; numberOfMatches and/or number ofWins might be undefined")
+         throw new Error ("Couldn't calculate the winRatio ; number of matches and/or number of wins might be undefined")
      }
 }
 
