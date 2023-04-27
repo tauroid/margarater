@@ -17,15 +17,13 @@ export default function TopTenToppingsPage() {
 
   useEffect(() => {
     updateTopTen()
-    setInterval(updateTopTen, 3000)
   }, [])
 
   return (
     <div className="topTenToppingsPage">
       {topTen && (
         <div className="topTenToppingsTable">
-          {/*<div className="title">Top Ten Toppings</div>*/}
-          <table>
+          <table cellSpacing="0">
             <thead>
               <tr>
                 <th>Rank</th>
@@ -36,7 +34,7 @@ export default function TopTenToppingsPage() {
             <tbody>
               {topTen?.map(({name, category, winRatio}, index) => (
                 <>
-                <tr className={category+"-row"}>
+                <tr className={category+"-row entry"}>
                   <td>{index+1}</td>
                   <td>{name}</td>
                   <td>{

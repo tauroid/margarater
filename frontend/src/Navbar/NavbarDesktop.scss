@@ -7,6 +7,8 @@
     align-items: center;
     background-color: $cheese-color;
     height: 108px;
+    position: relative;
+    overflow: clip;
 
     h1 {
         position: relative;
@@ -77,9 +79,9 @@
         }
     }
 
-    @media screen and (max-width: 1108px) {
+    @media screen and (max-width: 1130px) {
         h1 {
-            font-size: calc((100vw - 470px) * 0.124);
+            font-size: calc((100vw - 470px) * 0.122);
         }
     }
 }

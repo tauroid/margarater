@@ -3,7 +3,7 @@
 
 .topTenToppingsPage {
     width: 100%;
-    font-family: "elza-text", sans-serif;
+    font-family: $paragraph-font, sans-serif;
     font-size: 20px;
     display: flex;
     flex-direction: column;
@@ -18,22 +18,20 @@
         justify-content: space-around;
         align-items: center;
 
-        .title {
-            font-size: 20px;
-            padding: 20px 0 10px 0;
-            font-weight: bold;
-        }
-
         table {
             margin-top: 15px;
-            width: 500px;
-            border-collapse: collapse;
+            width: 800px;
         }
 
-        @media screen and (max-width: 520px) {
+        @media screen and (max-width: 820px) {
             table {
                 width: calc(100vw - 20px);
             }
+        }
+
+        table th {
+            color: $h1-and-buttons-text;
+            font-size: 30px;
         }
 
         table td, table th {
@@ -41,29 +39,53 @@
             padding: 9px;
         }
 
-        table td {
+        table tr.entry {
+            border-radius: 5px;
+            box-shadow: 3px 3px 6px -1px #000A;
+        }
+
+        table tr.entry td {
             margin: 0;
-            font-size: 17px;
+            font-size: 18px;
         }
 
         table tr.Cheese-row td {
-            background-color: rgba($cheese-color, 0.5);
+            border-color: $cheese-color;
+            border-top-style: solid;
+            border-top-width: 4px;
+            border-bottom-style: solid;
+            border-bottom-width: 4px;
+            background-color: rgba($cheese-color, 0.15);
         }
 
         table tr.Meat-row td {
-            background-color: rgba($meat-color, 0.5);
+            border-color: $meat-color;
+            border-top-style: solid;
+            border-top-width: 4px;
+            border-bottom-style: solid;
+            border-bottom-width: 4px;
+            background-color: rgba($meat-color, 0.15);
         }
 
         table tr.Veg-row td {
-            background-color: rgba($veg-color, 0.5);
+            border-color: $veg-color;
+            border-top-style: solid;
+            border-top-width: 4px;
+            border-bottom-style: solid;
+            border-bottom-width: 4px;
+            background-color: rgba($veg-color, 0.15);
         }
 
-        table td:first-child {
+        table tr.entry td:first-child {
             border-radius: 5px 0 0 5px;
+            border-left-style: solid;
+            border-left-width: 4px;
         }
 
-        table td:last-child {
+        table tr.entry td:last-child {
             border-radius: 0 5px 5px 0;
+            border-right-style: solid;
+            border-right-width: 4px;
         }
     }
 
