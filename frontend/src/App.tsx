@@ -1,13 +1,16 @@
-import './App.scss'
-import {BrowserRouter, Route, Routes} from 'react-router-dom'
+import React from 'react';
+import { useEffect, useState } from 'react'
+import { BrowserRouter, Route, Routes, Link } from 'react-router-dom'
+import RateToppingsPage from './RateToppingsPage/RateToppingsPage'
 import NavbarDesktop from './Navbar/NavbarDesktop'
 import NavbarMobile from './Navbar/NavbarMobile'
-import './styles/_colors.scss'
 import WindowSizeContext from './WindowSizeContext'
-import {useEffect, useState} from 'react'
 import TopTenToppingsPage from './TopTenToppingsPage/TopTenToppingsPage'
+import './App.scss'
+import './styles/_colors.scss'
 
-function App() {
+function App(): JSX.Element {
+
   const [windowSize, setWindowSize] = useState({
     width: window.innerWidth,
     height: window.innerHeight
@@ -31,7 +34,7 @@ function App() {
           : <NavbarDesktop />}
 
           <Routes>
-            <Route path="/" element={<div>Rate toppings</div> /*<RateToppingsPage/>*/}/>
+            <Route path="/" element={<RateToppingsPage/>}/>
             <Route path="/top10" element={<TopTenToppingsPage/>}/>
           </Routes>
         </WindowSizeContext.Provider>
@@ -40,4 +43,4 @@ function App() {
   )
 }
 
-export default App;
+export default App
