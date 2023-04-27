@@ -68,7 +68,7 @@ const RateToppingsPage = (): JSX.Element => {
 
         <div className="page">
 
-            <h2>Tell us your tastiest topping out of these two!</h2>
+            <h2>What's the tastiest topping out of these two?</h2>
 
             <div className="cardsDisplay">
                 <RateToppingCard
