@@ -3,27 +3,62 @@
 
 .page {
     background-color: $background-color;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-grow: 1;
+    position: relative;
+    overflow: clip;
 }
 
 h2 {
     text-align: center;
-    padding: 40px;
     font-family: $paragraph-font;
     font-size: 30px;
-    color: $h1-and-buttons-text
+    color: $h1-and-buttons-text;
+    margin: 20px 0;
+    z-index: 1;
 }
 
 span {
     font-family: $heading-font;
     font-size: 80px;
     font-weight: 900;
-    color: $h1-and-buttons-text
+    color: $h1-and-buttons-text;
+    margin: 0 20px;
+    text-align: center;
 }
 
 .cardsDisplay {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
+    margin-bottom: 20px;
+    z-index: 1;
+}
+
+.surprisePizza {
+    position: absolute;
+    width: 100%;
+}
+
+.pizza_link_container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    z-index: 1;
+    a {
+        text-decoration: none;
+        color: $h1-and-buttons-text;
+        background-color: $cheese-color;
+        border-radius: 5px;
+        font-family: $paragraph-font;
+        font-weight: 700;
+        font-style: normal;
+        font-size: 26px;
+        padding: 10px 20px ;
+        margin: 0 auto;
+}
 }
 
 @media screen and (max-width: 900px) {
@@ -36,7 +71,7 @@ span {
 @media screen and (max-width: 700px) {
     
     h2 {
-        padding: 30px;
+        padding: 0 30px;
         font-size: 25px;
     }
 
@@ -45,4 +80,10 @@ span {
         font-weight: 300;
     }
 
+}
+
+@media screen and (max-width: 423px) {
+    .cardsDisplay {
+        margin-bottom: 0;
+    }
 }

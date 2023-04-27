@@ -1,9 +1,9 @@
 // imports
-import { useState, useEffect } from "react";
-import { JsxElement } from "typescript";
+import { useState, useEffect, useContext } from "react";
 import './RateToppingsPage.scss'
 import RateToppingCard from "../RateToppingCard/RateToppingCard";
 import { Topping } from "../types"
+import WindowSizeContext from "../WindowSizeContext";
 
 const RateToppingsPage = (): JSX.Element => {
 
@@ -34,6 +34,8 @@ const RateToppingsPage = (): JSX.Element => {
         get2RandomToppings()
     }, [])
 
+    const [counter, setCounter] = useState(-7)
+
     function rateToppings(cardTopping: Topping) {
 
         let winningToppingId: string = ''
@@ -62,32 +64,44 @@ const RateToppingsPage = (): JSX.Element => {
             }
         })
 
+        setCounter(Math.min(counter+1,38))
     }
+
+    const windowSize = useContext(WindowSizeContext)
 
     return (
 
         <div className="page">
 
-            <h2>Tell us your tastiest topping out of these two!</h2>
+            <h2>What's the tastiest topping out of these two?</h2>
 
             <div className="cardsDisplay">
                 <RateToppingCard
                     cardTopping={topping1}
                     get2RandomToppings={get2RandomToppings}
                     rateToppings={rateToppings} />
-                <span>VS</span>
+                {windowSize.width > 423 && <span>VS</span>}
                 <RateToppingCard
                     cardTopping={topping2}
                     get2RandomToppings={get2RandomToppings}
                     rateToppings={rateToppings} />
             </div>
 
+            {windowSize.width <= 423 && <span>VS</span>}
+            <div className="pizza_link_container">
+                <a href="https://www.google.com/maps/search/?api=1&query=pizzeria" target="_blank">
+                    I'm getting hungry...
+                </a>    
+            </div>
+
+            <img className="surprisePizza" alt="pizza" src="images/pizza.png"
+                 style={{bottom: 'calc(-100% + '+(Math.max(counter,0)+35)+'%)'}}
+            />
         </div>
 
 
     )
 
 }
-
 
 export default RateToppingsPage
