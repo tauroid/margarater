@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { JsxElement } from "typescript";
 import './RateToppingsPage.scss'
 import RateToppingCard from "../RateToppingCard/RateToppingCard";
-import { Topping } from "../RateToppingCard/RateToppingCard"
+import { Topping } from "../types"
 
 const RateToppingsPage = (): JSX.Element => {
 

@@ -1,7 +1,7 @@
 import { getCategoriesCollection } from './db'
 import { Topping, ToppingWithCategoryId } from './topping'
 
-export default async function expandToppingsCategories(
+export default async function replaceToppingCategoryIdsWithNames(
   toppings: ToppingWithCategoryId[]
 ): Promise<Topping[]>
 {

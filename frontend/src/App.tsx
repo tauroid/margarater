@@ -5,9 +5,9 @@ import RateToppingsPage from './RateToppingsPage/RateToppingsPage'
 import NavbarDesktop from './Navbar/NavbarDesktop'
 import NavbarMobile from './Navbar/NavbarMobile'
 import WindowSizeContext from './WindowSizeContext'
+import TopTenToppingsPage from './TopTenToppingsPage/TopTenToppingsPage'
 import './App.scss'
 import './styles/_colors.scss'
-
 
 function App(): JSX.Element {
 
@@ -26,16 +26,21 @@ function App(): JSX.Element {
   }, [])
 
   return (
-    <WindowSizeContext.Provider value={windowSize}>
-      {(windowSize.width < 850) ? <NavbarMobile /> : <NavbarDesktop />}
+    <div className="App">
       <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<RateToppingsPage />} />
-        </Routes>
-      </BrowserRouter>
-    </WindowSizeContext.Provider>
-  );
+        <WindowSizeContext.Provider value={windowSize}>
+          {(windowSize.width < 930)
+          ? <NavbarMobile />
+          : <NavbarDesktop />}
 
+          <Routes>
+            <Route path="/" element={<RateToppingsPage/>}/>
+            <Route path="/top10" element={<TopTenToppingsPage/>}/>
+          </Routes>
+        </WindowSizeContext.Provider>
+      </BrowserRouter>
+    </div>
+  )
 }
 
 export default App
