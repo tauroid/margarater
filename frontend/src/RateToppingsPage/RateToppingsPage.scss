@@ -30,6 +30,7 @@ span {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 20px;
 }
 
 @media screen and (max-width: 900px) {
@@ -51,4 +52,10 @@ span {
         font-weight: 300;
     }
 
+}
+
+@media screen and (max-width: 423px) {
+    .cardsDisplay {
+        margin-bottom: 0;
+    }
 }
