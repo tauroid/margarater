@@ -17,5 +17,8 @@ app.use((req,res, next)=>{
 
 app.get('/twoRandomToppings', twoRandomToppings)
 
+// just to test rateToppings function
+app.post('/rateToppings', async (request, reponse) => {console.log('banana')})
+
 
 app.listen(port)
