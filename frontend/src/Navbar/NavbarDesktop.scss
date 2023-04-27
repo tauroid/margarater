@@ -19,6 +19,8 @@
         margin: 0;
         color: $h1-and-buttons-text;
         z-index: 10;
+        -webkit-text-stroke-width: 3px;
+        -webkit-text-stroke-color: $background-color;
     }
 
     .links {
@@ -31,22 +33,61 @@
         padding: 0 20px;
     }
 
+    @keyframes circle1Spin {
+        from {
+            left: 100px;
+        } to {
+            right: 600px;
+        }
+    }
+
+    @keyframes circle2Spin {
+        from {
+            top: -50px;
+        } to {
+            bottom: 0px;
+        }
+    }
+
+    @keyframes circle3Spin {
+        from {
+            right: 200px;
+        } to {
+            right: 1000px;
+        } 
+    }
+
     .circle1 {
         position: absolute;
         top: -50px;
         left: 50px;
+        animation-name: circle1Spin;
+	    animation-duration: 2s; 
+	    animation-iteration-count: infinite;
+	    animation-direction: alternate; 
+	    animation-timing-function: linear; 
     }
     
     .circle2 {
         position: absolute;
         left: 320px;
         top: 25px;
+        animation-name: circle2Spin;
+	    animation-duration: 2s; 
+	    animation-iteration-count: infinite;
+	    animation-direction: alternate; 
+	    animation-timing-function: linear; 
     }
     
     .circle3 {
         position: absolute;
         right: 420px;
-        top: 5px;
+        top: -100px;
+        animation-name: circle3Spin;
+	    animation-duration: 10s; 
+	    animation-iteration-count: infinite;
+	    animation-direction: alternate; 
+	    animation-timing-function: linear; 
     }
     
     @media screen and (max-width: 1800px) {
