@@ -24,7 +24,7 @@ export default function TopTenToppingsPage() {
     <div className="topTenToppingsPage">
       {topTen && (
         <div className="topTenToppingsTable">
-          <div className="title">Top Ten Toppings</div>
+          {/*<div className="title">Top Ten Toppings</div>*/}
           <table>
             <thead>
               <tr>
@@ -41,11 +41,11 @@ export default function TopTenToppingsPage() {
                   <td>{name}</td>
                   <td>{
                     winRatio === undefined
-                     ? "No matches"
+                     ? "No ratings"
                      : (winRatio*100).toFixed(0)+'%'
                   }</td>
                 </tr>
-                <tr className="nofill"><td></td></tr>
+                <tr><td></td></tr>
                 </>
               ))}
             </tbody>
