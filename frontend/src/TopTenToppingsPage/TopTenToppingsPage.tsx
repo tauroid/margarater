@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Topping } from '../types'
 import './TopTenToppingsPage.scss'
 
@@ -33,8 +33,8 @@ export default function TopTenToppingsPage() {
             </thead>
             <tbody>
               {topTen?.map(({name, category, winRatio}, index) => (
-                <>
-                  <tr key={index} className={category+"-row entry"}>
+                <React.Fragment key={index}>
+                  <tr className={category+"-row entry"}>
                     <td>{index+1}</td>
                     <td>{name}</td>
                     <td>{
@@ -44,7 +44,7 @@ export default function TopTenToppingsPage() {
                     }</td>
                   </tr>
                   <tr><td></td></tr>
-                </>
+                </React.Fragment>
               ))}
             </tbody>
           </table>
